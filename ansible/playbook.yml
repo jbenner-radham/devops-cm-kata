@@ -1,5 +1,6 @@
 ---
 - hosts:  all
-  become: true
+  become: true  # Perform the following tasks as "sudo".
   roles:
     - apache
+    - mariadb

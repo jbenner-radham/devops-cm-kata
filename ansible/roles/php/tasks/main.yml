@@ -1,9 +1,9 @@
 ---
-- name: Install PHP
-  apt:  name=php5
+- name:  Install PHP
+  apt:   name=php5
 
-- name: Install PHP Modules
-  apt:  name={{ item }}
+- name:  Install PHP Modules
+  apt:   name={{ item }}
   with_items:
     - php5-curl
     - php5-intl

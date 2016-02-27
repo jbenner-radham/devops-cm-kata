@@ -3,9 +3,11 @@
   become: true  # Perform the following tasks as "sudo".
   vars_files:
     - vars/apache.yml
+    - vars/app.yml
   roles:
     - apt
     - git
     - apache
     - mariadb
     - php
+    - app

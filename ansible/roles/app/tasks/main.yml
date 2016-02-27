@@ -1,0 +1,20 @@
+- name:       Copy Environment File
+  copy:       src=../src/.env.example
+              dest=/vagrant/src/.env
+              force=no
+
+- name:       Change DB Username
+  lineinfile: dest=/vagrant/src/.env
+              regexp='DB_USERNAME=homestead'
+              line='DB_USERNAME={{ app.db.username }}'
+
+- name:       Change DB Password
+  lineinfile: dest=/vagrant/src/.env
+              regexp='DB_PASSWORD=secret'
+              line='DB_PASSWORD={{ app.db.password }}'
+
+- name:       Run Composer Install
+  shell:      (cd /vagrant/src && composer install)
+
+- name:       Generate App Key
+  shell:      (cd /vagrant/src && php artisan key:generate)

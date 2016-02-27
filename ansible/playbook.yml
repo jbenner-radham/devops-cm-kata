@@ -4,3 +4,4 @@
   roles:
     - apache
     - mariadb
+    - php

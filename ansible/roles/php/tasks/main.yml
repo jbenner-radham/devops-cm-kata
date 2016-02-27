@@ -1,0 +1,3 @@
+---
+- name: Install PHP
+  apt:  name=php5 update_cache=yes

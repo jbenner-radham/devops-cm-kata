@@ -15,3 +15,6 @@
          curl -sS https://getcomposer.org/installer |
          php -- --install-dir=/usr/local/bin --filename=composer
          creates=/usr/local/bin/composer warn=no
+
+- name:  Install Prestissimo
+  shell: composer global require hirak/prestissimo

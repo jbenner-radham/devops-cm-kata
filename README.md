@@ -25,8 +25,8 @@ Pillarites to expand upon your project.
 
 Requirements
 ------------
-- [ ] Install/configure the CM tool of your choice.
-- [ ] Automate the provisioning of a 3-tier web application stack (data layer,
+- [x] Install/configure the CM tool of your choice.
+- [x] Automate the provisioning of a 3-tier web application stack (data layer,
       application layer, presentation layer). An example stack might be, but is
       in no way limited to, redis/passenger/nginx.
 - [ ] Automate the deployment of a simple 'ping' page that establishes that each

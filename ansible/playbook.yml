@@ -3,6 +3,7 @@
   become: true  # Perform the following tasks as "sudo".
   roles:
     - apt
+    - git
     - apache
     - mariadb
     - php

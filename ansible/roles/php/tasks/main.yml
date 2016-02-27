@@ -1,3 +1,16 @@
 ---
 - name: Install PHP
-  apt:  name=php5 update_cache=yes
+  apt:  name=php5
+
+- name: Install PHP Modules
+  apt:  name={{ item }}
+  with_items:
+    - php5-curl
+    - php5-mcrypt
+    - php5-mysql
+
+- name:  Install Composer
+  shell: >
+         curl -sS https://getcomposer.org/installer |
+         php -- --install-dir=/usr/local/bin --filename=composer
+         creates=/usr/local/bin/composer warn=no

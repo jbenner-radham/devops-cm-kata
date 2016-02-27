@@ -2,6 +2,7 @@
 - hosts:  all
   become: true  # Perform the following tasks as "sudo".
   roles:
+    - apt
     - apache
     - mariadb
     - php

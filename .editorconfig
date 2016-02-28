@@ -1,0 +1,29 @@
+# EditorConfig is awesome <http://editorconfig.org>
+
+# Top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+max_line_length = 120
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.yml]
+indent_size = 2
+indent_style = space
+
+# Tab indentation for targets
+# @see <http://pubs.opengroup.org/onlinepubs/9699919799/utilities/make.html#tag_20_76_13_04>
+[{M,m}akefile]
+indent_style = tab
+
+[Vagrantfile]
+indent_size = 2
+indent_style = space

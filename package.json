@@ -1,0 +1,31 @@
+{
+  "name": "@radioactivehamster/devops-cm-kata",
+  "version": "0.0.0",
+  "description": "An exercise in which we'll be provisioning a LAMP stack with Vagrant & Ansible.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbenner-radham/devops-cm-kata.git"
+  },
+  "author": "James Benner <james.benner@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbenner-radham/devops-cm-kata/issues"
+  },
+  "homepage": "https://github.com/jbenner-radham/devops-cm-kata#readme",
+  "devDependencies": {
+    "@radioactivehamster/date-time": "^0.1.3",
+    "browser-sync": "^2.11.1",
+    "colors.css": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-colorguard": "^1.1.0",
+    "gulp-htmltidy": "^0.2.2",
+    "gulp-less": "^3.0.5",
+    "gulp-stachio": "^0.1.0",
+    "js-yaml": "^3.5.3"
+  }
+}

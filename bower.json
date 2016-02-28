@@ -1,0 +1,23 @@
+{
+  "name": "devops-cm-kata",
+  "homepage": "https://github.com/jbenner-radham/devops-cm-kata",
+  "authors": [
+    "James Benner <james.benner@gmail.com>"
+  ],
+  "description": "Stuff...",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "impress.js": "^0.5.3"
+  }
+}

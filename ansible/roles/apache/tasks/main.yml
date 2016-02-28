@@ -9,7 +9,6 @@
     - rewrite
     - headers
     - expires
-    - filter
 
 - name:           Change Default Apache Site
   template:       src=vhost.conf.tpl dest=/etc/apache2/sites-available/000-default.conf

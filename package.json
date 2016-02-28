@@ -28,7 +28,5 @@
     "gulp-stachio": "^0.1.0",
     "js-yaml": "^3.5.3"
   },
-  "dependencies": {
-    "normalize.css": "^3.0.3"
-  }
+  "dependencies": {}
 }

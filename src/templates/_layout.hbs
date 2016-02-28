@@ -4,15 +4,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="author" content="{{author}}">
-        <meta name="viewport" content="width=1024">
         <meta property="dcterms:modified" content="{{timestamp}}">
         <title>James Benner: DevOps CM Kata Presentation</title>
-        <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
         {{{content}}}
-        <script src="bower_components/impress.js/js/impress.js"></script>
-        <script>impress().init();</script>
+        <script src="bower_components/reveal.js/js/reveal.js"></script>
+        <script>
+            Reveal.initialize();
+        </script>
     </body>
 </html>

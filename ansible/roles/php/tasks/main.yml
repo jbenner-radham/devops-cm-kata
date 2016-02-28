@@ -16,5 +16,5 @@
          php -- --install-dir=/usr/local/bin --filename=composer
          creates=/usr/local/bin/composer warn=no
 
-- name:  Install Prestissimo
+- name:  Install Prestissimo (to speed up Composer installs)
   shell: composer global require hirak/prestissimo

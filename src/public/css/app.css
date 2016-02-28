@@ -21,4 +21,10 @@ h1 {
   text-align: center;
   display: inline-block; }
 
+.status-ok {
+  color: #ccc; }
+
+.status-fail {
+  color: #ff0000; }
+
 /*# sourceMappingURL=app.css.map */

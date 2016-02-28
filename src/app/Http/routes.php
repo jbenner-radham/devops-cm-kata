@@ -27,5 +27,6 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
+    Route::resource('status', 'StatusController');
     Route::resource('users', 'UserController');
 });

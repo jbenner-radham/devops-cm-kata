@@ -29,7 +29,7 @@ Requirements
 - [x] Automate the provisioning of a 3-tier web application stack (data layer,
       application layer, presentation layer). An example stack might be, but is
       in no way limited to, redis/passenger/nginx.
-- [ ] Automate the deployment of a simple 'ping' page that establishes that each
+- [x] Automate the deployment of a simple 'ping' page that establishes that each
       of the 3 layers in the stack are available.
 
 License

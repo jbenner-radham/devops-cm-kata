@@ -10,6 +10,18 @@
     - php5-mcrypt
     - php5-mysql
 
+- name:  Enable PHP Modules
+  shell: php5enmod {{ item }}
+  with_items:
+    - curl
+    - intl
+    - json
+    - opcache
+    - mysql
+    - mysqli
+    - pdo
+    - pdo_mysql
+
 - name:  Install Composer
   shell: >
          curl -sS https://getcomposer.org/installer |

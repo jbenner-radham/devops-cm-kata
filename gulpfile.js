@@ -4,10 +4,13 @@ let babel       = require('gulp-babel');
 let browserSync = require('browser-sync').create();
 let colorguard  = require('gulp-colorguard');
 let dateTime    = require('@radioactivehamster/date-time');
+let fs          = require('fs');
 let gulp        = require('gulp');
+let htmltidy    = require('gulp-htmltidy');
 let less        = require('gulp-less');
 let pkg         = require('./package.json');
 let stachio     = require('gulp-stachio');
+let yaml        = require('js-yaml');
 
 gulp.task('serve', ['style', 'templates'], () => {
     browserSync.init({
@@ -27,10 +30,13 @@ gulp.task('style', () => {
 
 gulp.task('templates', () => {
     // Remove angle bracket enclosed email addresses.
-    let author = pkg.author.replace(/ <.+>/i, '');
+    let author  = pkg.author.replace(/ <.+>/i, '');
+    let context = { author: author, timestamp: dateTime() };
+    let tidyrc  = yaml.load(fs.readFileSync('./.tidyrc').toString());
 
     return gulp.src('src/templates/index.hbs')
-               .pipe(stachio({ author: author, timestamp: dateTime() }))
+               .pipe(stachio(context))
+               .pipe(htmltidy(tidyrc))
                .pipe(gulp.dest('./'));
 });
 

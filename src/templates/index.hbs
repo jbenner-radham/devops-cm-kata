@@ -35,5 +35,27 @@
                 </code>
             </pre>
         </section>
+
+        <section>
+            <strong>Starting Out With Our Playbook</strong>
+            <br>
+            <pre>
+                <code class="hljs yaml">
+        ---
+        - hosts:  all
+          become: true  # Perform the following tasks as "sudo".
+          vars_files:
+            - vars/apache.yml
+            - vars/app.yml
+          roles:
+            - apt
+            - git
+            - apache
+            - mariadb
+            - php
+            - app
+                </code>
+            </pre>
+        </section>
     </div> <!-- .slides -->
 </div> <!-- .reveal -->

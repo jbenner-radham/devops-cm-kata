@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="author" content="">
-        <meta property="dcterms:modified" content="2016-02-29T00:37:42Z">
+        <meta property="dcterms:modified" content="2016-02-29T00:54:47Z">
         <title>James Benner: DevOps CM Kata Presentation</title>
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
         <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
@@ -47,6 +47,40 @@
         config.vm.provision "ansible" do |ansible|
           ansible.playbook = "ansible/playbook.yml"
         end
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <strong>Starting Out With Our Playbook</strong>
+            <br>
+            <pre>
+                <code class="hljs yaml">
+        ---
+        - hosts:  all
+          become: true  # Perform the following tasks as "sudo".
+          vars_files:
+            - vars/apache.yml
+            - vars/app.yml
+          roles:
+            - apt
+            - git
+            - apache
+            - mariadb
+            - php
+            - app
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <strong>Our APT Task</strong>
+            <br>
+            <pre>
+                <code>
+        ---
+        - name: Update APT
+          apt:  update_cache=yes
                 </code>
             </pre>
         </section>

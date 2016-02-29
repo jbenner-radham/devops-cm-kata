@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-US" prefix="dcterms: http://purl.org/dc/terms/">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta name="author" content="">
-        <meta property="dcterms:modified" content="2016-02-29T00:54:47Z">
-        <title>James Benner: DevOps CM Kata Presentation</title>
-        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
-        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
-        <!-- Code syntax highlighting -->
-        <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
-        <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
-        <div class="reveal">
-    <div class="slides">
-        <section>
-            <strong>DevOps CM Kata</strong><br>
-            <i>or</i><br>
-            <strong>Automagically Provisioning a Server</strong>
-        </section>
-
-        <section>
-            <strong><em>&ldquo;Who the Heck Is This Guy?&rdquo;</em></strong>
-            <br>
-            <pre>
+<head>
+<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 4.9.24">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="author" content="James Benner">
+<meta property="dcterms:modified" content="2016-02-29T23:03:46Z">
+<title>James Benner: DevOps CM Kata Presentation</title>
+<link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+<link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/zenburn.min.css">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section><strong>DevOps CM Kata</strong><br>
+<i>or</i><br>
+<strong>Automagically Provisioning a Server</strong></section>
+<section><strong><em>“Who the Heck Is This Guy?”</em></strong><br>
+<pre>
                 <code class="hljs json">
         {
             "@context": "http://www.w3.org/2006/vcard/ns",
@@ -35,26 +30,20 @@
             "hasURL": "https://github.com/radioactivehamster"
         }
                 </code>
-            </pre>
-        </section>
-
-        <section>
-            <strong>Kickstarting From Vagrant</strong>
-            <br>
-            <pre>
+            
+</pre></section>
+<section><strong>Kickstarting From Vagrant</strong><br>
+<pre>
                 <code class="hljs ruby">
         # Run Ansible from the Vagrant Host
         config.vm.provision "ansible" do |ansible|
           ansible.playbook = "ansible/playbook.yml"
         end
                 </code>
-            </pre>
-        </section>
-
-        <section>
-            <strong>Starting Out With Our Playbook</strong>
-            <br>
-            <pre>
+            
+</pre></section>
+<section><strong>Starting Out With Our Playbook</strong><br>
+<pre>
                 <code class="hljs yaml">
         ---
         - hosts:  all
@@ -70,35 +59,27 @@
             - php
             - app
                 </code>
-            </pre>
-        </section>
-
-        <section>
-            <strong>Our APT Task</strong>
-            <br>
-            <pre>
+            
+</pre></section>
+<section><strong>Our APT Task</strong><br>
+<pre>
                 <code>
         ---
         - name: Update APT
           apt:  update_cache=yes
                 </code>
-            </pre>
-        </section>
-    </div> <!-- .slides -->
-</div> <!-- .reveal -->
-
-        <script src="bower_components/reveal.js/js/reveal.js"></script>
-        <script src="bower_components/headjs/dist/1.0.0/head.min.js"></script>
-        <script>
-            Reveal.initialize({
-                dependencies: [
-                    // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-                    { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-
-                    // Syntax highlight for <code> elements
-                    { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                ]
-            });
-        </script>
-    </body>
+            
+</pre></section>
+</div>
+<!-- .slides --></div>
+<!-- .reveal -->
+<script src="bower_components/reveal.js/js/reveal.js">
+</script> 
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js">
+</script> 
+<script>
+            Reveal.initialize();
+            hljs.initHighlightingOnLoad();
+</script>
+</body>
 </html>

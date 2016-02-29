@@ -10,7 +10,7 @@
             <strong><em>&ldquo;Who the Heck Is This Guy?&rdquo;</em></strong>
             <br>
             <pre>
-                <code class="json">
+                <code class="hljs json">
         {
             "@context": "http://www.w3.org/2006/vcard/ns",
             "@type": "Individual",
@@ -19,6 +19,19 @@
             "hasURL": "https://github.com/jbenner-radham",
             "hasURL": "https://github.com/radioactivehamster"
         }
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <strong>Kickstarting From Vagrant</strong>
+            <br>
+            <pre>
+                <code class="hljs ruby">
+        # Run Ansible from the Vagrant Host
+        config.vm.provision "ansible" do |ansible|
+          ansible.playbook = "ansible/playbook.yml"
+        end
                 </code>
             </pre>
         </section>

@@ -4,10 +4,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="author" content="">
-        <meta property="dcterms:modified" content="2016-02-28T23:26:29Z">
+        <meta property="dcterms:modified" content="2016-02-29T00:37:42Z">
         <title>James Benner: DevOps CM Kata Presentation</title>
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
         <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
@@ -23,7 +25,7 @@
             <strong><em>&ldquo;Who the Heck Is This Guy?&rdquo;</em></strong>
             <br>
             <pre>
-                <code class="json">
+                <code class="hljs json">
         {
             "@context": "http://www.w3.org/2006/vcard/ns",
             "@type": "Individual",
@@ -35,12 +37,34 @@
                 </code>
             </pre>
         </section>
+
+        <section>
+            <strong>Kickstarting From Vagrant</strong>
+            <br>
+            <pre>
+                <code class="hljs ruby">
+        # Run Ansible from the Vagrant Host
+        config.vm.provision "ansible" do |ansible|
+          ansible.playbook = "ansible/playbook.yml"
+        end
+                </code>
+            </pre>
+        </section>
     </div> <!-- .slides -->
 </div> <!-- .reveal -->
 
         <script src="bower_components/reveal.js/js/reveal.js"></script>
+        <script src="bower_components/headjs/dist/1.0.0/head.min.js"></script>
         <script>
-            Reveal.initialize();
+            Reveal.initialize({
+                dependencies: [
+                    // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+                    { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+                    // Syntax highlight for <code> elements
+                    { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                ]
+            });
         </script>
     </body>
 </html>

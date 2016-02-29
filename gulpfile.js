@@ -6,6 +6,7 @@ let colorguard  = require('gulp-colorguard');
 let dateTime    = require('@radioactivehamster/date-time');
 let gulp        = require('gulp');
 let less        = require('gulp-less');
+let pkg         = require('./package.json');
 let stachio     = require('gulp-stachio');
 
 gulp.task('serve', ['style', 'templates'], () => {
@@ -25,8 +26,11 @@ gulp.task('style', () => {
 
 
 gulp.task('templates', () => {
+    // Remove angle bracket enclosed email addresses.
+    let author = pkg.author.replace(/ <.+>/i, '');
+
     return gulp.src('src/templates/index.hbs')
-               .pipe(stachio({ timestamp: dateTime() }))
+               .pipe(stachio({ author: author, timestamp: dateTime() }))
                .pipe(gulp.dest('./'));
 });
 

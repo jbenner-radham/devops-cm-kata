@@ -1,0 +1,9 @@
+<h2>Kickstarting From Vagrant</h2>
+<pre>
+    <code class="hljs ruby">
+# Run Ansible from the Vagrant Host
+config.vm.provision "ansible" do |ansible|
+  ansible.playbook = "ansible/playbook.yml"
+end
+    </code>
+</pre>

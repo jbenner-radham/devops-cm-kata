@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="author" content="James Benner">
-<meta property="dcterms:modified" content="2016-03-01T21:58:03Z">
+<meta property="dcterms:modified" content="2016-03-01T22:20:42Z">
 <title>James Benner: DevOps CM Kata Presentation</title>
 <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
 <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
@@ -23,17 +23,17 @@
 <section>
 <h2><em>“Who the Heck Is This Guy?”</em></h2>
 <pre>
-                <code class="hljs json">
-        {
-            "@context": "http://www.w3.org/2006/vcard/ns",
-            "@type": "Individual",
-            "fn": "James Benner",
-            "hasURL": "http://www.jamesbenner.com",
-            "hasURL": "https://github.com/jbenner-radham",
-            "hasURL": "https://github.com/radioactivehamster"
-        }
-                </code>
-            
+        <code class="hljs json">
+    {
+        "@context": "http://www.w3.org/2006/vcard/ns",
+        "@type": "Individual",
+        "fn": "James Benner",
+        "hasURL": "http://www.jamesbenner.com",
+        "hasURL": "https://github.com/jbenner-radham",
+        "hasURL": "https://github.com/radioactivehamster"
+    }
+        </code>
+    
 </pre></section>
 <section>
 <h2><em>“Why a LAMP Stack?”</em></h2>
@@ -56,82 +56,82 @@
 <section>
 <h2>Kickstarting From Vagrant</h2>
 <pre>
-                <code class="hljs ruby">
-        # Run Ansible from the Vagrant Host
-        config.vm.provision "ansible" do |ansible|
-          ansible.playbook = "ansible/playbook.yml"
-        end
-                </code>
-            
+        <code class="hljs ruby">
+    # Run Ansible from the Vagrant Host
+    config.vm.provision "ansible" do |ansible|
+      ansible.playbook = "ansible/playbook.yml"
+    end
+        </code>
+    
 </pre></section>
 <section>
 <h2>Starting Out With Our Playbook</h2>
 <pre>
-                <code class="hljs yaml">
-        ---
-        - hosts:  all
-          become: true  # Perform the following tasks as "sudo".
-          vars_files:
-            - vars/apache.yml
-            - vars/app.yml
-          roles:
-            - apt
-            - git
-            - apache
-            - mariadb
-            - php
-            - app
-                </code>
-            
+        <code class="hljs yaml">
+    ---
+    - hosts:  all
+      become: true  # Perform the following tasks as "sudo".
+      vars_files:
+        - vars/apache.yml
+        - vars/app.yml
+      roles:
+        - apt
+        - git
+        - apache
+        - mariadb
+        - php
+        - app
+        </code>
+    
 </pre></section>
 <section>
 <h2>Our APT Task</h2>
 <pre>
-                <code class="hljs yaml">
-        ---
-        - name: Update APT
-          apt:  update_cache=yes
-                </code>
-            
+        <code class="hljs yaml">
+    ---
+    - name: Update APT
+      apt:  update_cache=yes
+        </code>
+    
 </pre></section>
 <section>
 <h2>Installing Apache</h2>
 <pre>
-                <code class="hljs yaml">
-        ---
-        - name:           Install Apache
-          apt:            name=apache2
-
-        - name:           Install Apache Modules
-          apache2_module: state=present name={{ item }}
-          notify:         restart apache
-          with_items:
-            - rewrite
-            - headers
-            - expires
-                </code>
-            
+        <code class="hljs yaml">
+    ---
+    - name:           Install Apache
+      apt:            name=apache2
+    
+    - name:           Install Apache Modules
+      apache2_module: state=present name={{ item }}
+      notify:         restart apache
+      with_items:
+        - rewrite
+        - headers
+        - expires
+        </code>
+    
 </pre></section>
 <section>
 <h2>Configuring Apache</h2>
 <pre>
-                <code class="hljs yaml">
-        - name:       Change Default Apache Site
-          template:   src=vhost.conf.tpl
-                      dest=/etc/apache2/sites-available/000-default.conf
-
-        - name:       Change Apache Run User
-          lineinfile: dest=/etc/apache2/envvars
-                      regexp='export APACHE_RUN_USER=www-data'
-                      line='export APACHE_RUN_USER=vagrant'
-
-        - name:       Change Apache Run Group
-          lineinfile: dest=/etc/apache2/envvars
-                      regexp='export APACHE_RUN_GROUP=www-data'
-                      line='export APACHE_RUN_GROUP=vagrant'
-          notify:     Restart Apache
-                </code>
-            
+        <code class="hljs yaml">
+    - name:       Change Default Apache Site
+      template:   src=vhost.conf.tpl
+                  dest=/etc/apache2/sites-available/000-default.conf
+    
+    - name:       Change Apache Run User
+      lineinfile: dest=/etc/apache2/envvars
+                  regexp='export APACHE_RUN_USER=www-data'
+                  line='export APACHE_RUN_USER=vagrant'
+    
+    - name:       Change Apache Run Group
+      lineinfile: dest=/etc/apache2/envvars
+                  regexp='export APACHE_RUN_GROUP=www-data'
+                  line='export APACHE_RUN_GROUP=vagrant'
+      notify:     Restart Apache
+        </code>
+    
 </pre></section>
 </div>
 <!-- .slides --></div>

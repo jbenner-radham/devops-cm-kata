@@ -1,0 +1,18 @@
+<h2>Starting Out With Our Playbook</h2>
+<pre>
+    <code class="hljs yaml">
+---
+- hosts:  all
+  become: true  # Perform the following tasks as "sudo".
+  vars_files:
+    - vars/apache.yml
+    - vars/app.yml
+  roles:
+    - apt
+    - git
+    - apache
+    - mariadb
+    - php
+    - app
+    </code>
+</pre>

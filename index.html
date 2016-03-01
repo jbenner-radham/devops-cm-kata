@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="author" content="James Benner">
-<meta property="dcterms:modified" content="2016-03-01T00:53:25Z">
+<meta property="dcterms:modified" content="2016-03-01T01:02:53Z">
 <title>James Benner: DevOps CM Kata Presentation</title>
 <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
 <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
@@ -86,12 +86,29 @@
 </pre></section>
 <section>
 <h2>Our APT Task</h2>
-<br>
 <pre>
-                <code>
+                <code class="hljs yaml">
         ---
         - name: Update APT
           apt:  update_cache=yes
+                </code>
+            
+</pre></section>
+<section>
+<h2>Installing Apache</h2>
+<pre>
+                <code class="hljs yaml">
+        ---
+        - name:           Install Apache
+          apt:            name=apache2
+
+        - name:           Install Apache Modules
+          apache2_module: state=present name={{ item }}
+          notify:         restart apache
+          with_items:
+            - rewrite
+            - headers
+            - expires
                 </code>
             
 </pre></section>

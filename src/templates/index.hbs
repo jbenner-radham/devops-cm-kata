@@ -79,12 +79,30 @@
 
         <section>
             <h2>Our APT Task</h2>
-            <br>
             <pre>
-                <code>
+                <code class="hljs yaml">
         ---
         - name: Update APT
           apt:  update_cache=yes
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <h2>Installing Apache</h2>
+            <pre>
+                <code class="hljs yaml">
+        ---
+        - name:           Install Apache
+          apt:            name=apache2
+
+        - name:           Install Apache Modules
+          apache2_module: state=present name=\{{ item }}
+          notify:         restart apache
+          with_items:
+            - rewrite
+            - headers
+            - expires
                 </code>
             </pre>
         </section>

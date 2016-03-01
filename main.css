@@ -5,13 +5,34 @@
 h1 {
   color: #7fdbff !important;
   text-transform: none !important;
+  text-shadow: 1px 0px 1px #000, 0px 1px 1px #000,
+        2px 1px 1px #000, 1px 2px 1px #000,
+        3px 2px 1px #000, 2px 3px 1px #000,
+        4px 3px 1px #000, 3px 4px 1px #000,
+        5px 4px 1px #000, 4px 5px 1px #000,
+        6px 5px 1px #000, 5px 6px 1px #000,
+        7px 6px 1px #000 !important;
 }
 h2 {
   color: #7fdbff !important;
   font-size: 4rem !important;
   text-transform: none !important;
+  text-shadow: 1px 0px 1px #000, 0px 1px 1px #000,
+        2px 1px 1px #000, 1px 2px 1px #000,
+        3px 2px 1px #000, 2px 3px 1px #000,
+        4px 3px 1px #000, 3px 4px 1px #000,
+        5px 4px 1px #000, 4px 5px 1px #000,
+        6px 5px 1px #000, 5px 6px 1px #000,
+        7px 6px 1px #000 !important;
 }
 .mid-title {
   font-style: italic !important;
   text-transform: none !important;
+  text-shadow: 1px 0px 1px #000, 0px 1px 1px #000,
+        2px 1px 1px #000, 1px 2px 1px #000,
+        3px 2px 1px #000, 2px 3px 1px #000,
+        4px 3px 1px #000, 3px 4px 1px #000,
+        5px 4px 1px #000, 4px 5px 1px #000,
+        6px 5px 1px #000, 5px 6px 1px #000,
+        7px 6px 1px #000 !important;
 }

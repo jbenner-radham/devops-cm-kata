@@ -1,0 +1,13 @@
+h1 {
+  color: #7fdbff !important;
+  text-transform: none !important;
+}
+h2 {
+  color: #7fdbff !important;
+  font-size: 4rem !important;
+  text-transform: none !important;
+}
+.mid-title {
+  font-style: italic !important;
+  text-transform: none !important;
+}

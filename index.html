@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="author" content="James Benner">
-<meta property="dcterms:modified" content="2016-03-01T00:13:11Z">
+<meta property="dcterms:modified" content="2016-03-01T00:53:25Z">
 <title>James Benner: DevOps CM Kata Presentation</title>
 <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
 <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
@@ -15,10 +15,13 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section><strong>DevOps CM Kata</strong><br>
-<i>or</i><br>
-<strong>Automagically Provisioning a Server</strong></section>
-<section><strong><em>“Who the Heck Is This Guy?”</em></strong><br>
+<section>
+<h1>DevOps CM Kata</h1>
+<h3 class="mid-title">or</h3>
+<h1>Automagically Provisioning a Server</h1>
+</section>
+<section>
+<h2><em>“Who the Heck Is This Guy?”</em></h2>
 <pre>
                 <code class="hljs json">
         {
@@ -32,14 +35,16 @@
                 </code>
             
 </pre></section>
-<section><strong><em>“Why a LAMP Stack?”</em></strong>
+<section>
+<h2><em>“Why a LAMP Stack?”</em></h2>
 <p></p>
 <ul>
 <li>It's a well established and widely used stack.</li>
 <li>It has widespread tooling support due to the above.</li>
 </ul>
 <p></p></section>
-<section><strong><em>“What Are Some Alternatives?”</em></strong>
+<section>
+<h2><em>“What Are Some Alternatives?”</em></h2>
 <p></p>
 <ul>
 <li>LEMP Stack</li>
@@ -48,7 +53,8 @@
 <li>Adding a Varnish Frontend to Any of the Above.</li>
 </ul>
 <p></p></section>
-<section><strong>Kickstarting From Vagrant</strong><br>
+<section>
+<h2>Kickstarting From Vagrant</h2>
 <pre>
                 <code class="hljs ruby">
         # Run Ansible from the Vagrant Host
@@ -58,7 +64,8 @@
                 </code>
             
 </pre></section>
-<section><strong>Starting Out With Our Playbook</strong><br>
+<section>
+<h2>Starting Out With Our Playbook</h2>
 <pre>
                 <code class="hljs yaml">
         ---
@@ -77,7 +84,9 @@
                 </code>
             
 </pre></section>
-<section><strong>Our APT Task</strong><br>
+<section>
+<h2>Our APT Task</h2>
+<br>
 <pre>
                 <code>
         ---

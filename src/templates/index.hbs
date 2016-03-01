@@ -106,5 +106,27 @@
                 </code>
             </pre>
         </section>
+
+        <section>
+            <h2>Configuring Apache</h2>
+            <pre>
+                <code class="hljs yaml">
+        - name:           Change Default Apache Site
+          template:       src=vhost.conf.tpl
+                          dest=/etc/apache2/sites-available/000-default.conf
+          notify:         Restart Apache
+
+        - name:           Change Apache Run User
+          lineinfile:     dest=/etc/apache2/envvars
+                          regexp='export APACHE_RUN_USER=www-data'
+                          line='export APACHE_RUN_USER=vagrant'
+
+        - name:           Change Apache Run Group
+          lineinfile:     dest=/etc/apache2/envvars
+                          regexp='export APACHE_RUN_GROUP=www-data'
+                          line='export APACHE_RUN_GROUP=vagrant'
+                </code>
+            </pre>
+        </section>
     </div> <!-- .slides -->
 </div> <!-- .reveal -->

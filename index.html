@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="author" content="James Benner">
-<meta property="dcterms:modified" content="2016-03-01T22:20:42Z">
+<meta property="dcterms:modified" content="2016-03-01T23:28:30Z">
 <title>James Benner: DevOps CM Kata Presentation</title>
 <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
 <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
@@ -130,6 +130,19 @@
                   regexp='export APACHE_RUN_GROUP=www-data'
                   line='export APACHE_RUN_GROUP=vagrant'
       notify:     Restart Apache
+        </code>
+    
+</pre></section>
+<section>
+<h2>Installing Git</h2>
+<ul>
+<li>Needed for Composer Installs</li>
+</ul>
+<pre>
+        <code class="hljs yaml">
+    ---
+    - name: Install Git
+      apt:  name=git
         </code>
     
 </pre></section>

@@ -1,1 +1,6 @@
+/.vagrant
 /node_modules
+/src/.env
+/src/bootstrap/cache
+/src/storage
+/src/vendor

@@ -1,0 +1,17 @@
+<h2>Installing PHP Apps</h2>
+<ul>
+    <li>Composer - To Install PHP Packages
+    <li>Prestissimo - To Speed Up Composer Installs
+</ul>
+<pre>
+    <code class="hljs yaml">
+- name:  Install Composer
+  shell: >
+         curl -sS https://getcomposer.org/installer |
+         php -- --install-dir=/usr/local/bin --filename=composer
+         creates=/usr/local/bin/composer warn=no
+
+- name:  Install Prestissimo (to speed up Composer installs)
+  shell: composer global require hirak/prestissimo
+    </code>
+</pre>

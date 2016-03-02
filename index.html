@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="author" content="James Benner">
-<meta property="dcterms:modified" content="2016-03-02T19:47:56Z">
+<meta property="dcterms:modified" content="2016-03-02T20:36:20Z">
 <title>James Benner: DevOps CM Kata Presentation</title>
 <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
 <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
@@ -198,12 +198,31 @@
         - mysqli
         - pdo
         - pdo_mysql
-    </code>
+        </code>
+    
+</pre></section>
+<section>
+<h2>Installing PHP Apps</h2>
+<ul>
+<li>Composer - To Install PHP Packages</li>
+<li>Prestissimo - To Speed Up Composer Installs</li>
+</ul>
+<pre>
+        <code class="hljs yaml">
+    - name:  Install Composer
+      shell: &gt;
+             curl -sS https://getcomposer.org/installer |
+             php -- --install-dir=/usr/local/bin --filename=composer
+             creates=/usr/local/bin/composer warn=no
+    
+    - name:  Install Prestissimo (to speed up Composer installs)
+      shell: composer global require hirak/prestissimo
+        </code>
+    
 </pre></section>
 </div>
 <!-- .slides --></div>
 <!-- .reveal -->
-<code class="hljs yaml">
 <script src="bower_components/reveal.js/js/reveal.js">
 </script> 
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js">
@@ -211,6 +230,6 @@
 <script>
             Reveal.initialize();
             hljs.initHighlightingOnLoad();
-</script></code>
+</script>
 </body>
 </html>

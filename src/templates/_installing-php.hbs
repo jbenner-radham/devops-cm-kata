@@ -1,0 +1,16 @@
+<h2>Installing PHP</h2>
+<pre>
+    <code class="hljs yaml">
+---
+- name:  Install PHP
+  apt:   name=php5
+
+- name:  Install PHP Modules
+  apt:   name=\{{ item }}
+  with_items:
+    - php5-curl
+    - php5-intl
+    - php5-mcrypt
+    - php5-mysql
+    </code>
+</pre>

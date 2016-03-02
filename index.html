@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="author" content="James Benner">
-<meta property="dcterms:modified" content="2016-03-02T00:16:43Z">
+<meta property="dcterms:modified" content="2016-03-02T00:26:13Z">
 <title>James Benner: DevOps CM Kata Presentation</title>
 <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
 <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
@@ -162,6 +162,24 @@
                 state=present
                 login_user={{ app.db.username }}
                 login_password={{ app.db.password }}
+        </code>
+    
+</pre></section>
+<section>
+<h2>Installing PHP</h2>
+<pre>
+        <code class="hljs yaml">
+    ---
+    - name:  Install PHP
+      apt:   name=php5
+    
+    - name:  Install PHP Modules
+      apt:   name={{ item }}
+      with_items:
+        - php5-curl
+        - php5-intl
+        - php5-mcrypt
+        - php5-mysql
         </code>
     
 </pre></section>

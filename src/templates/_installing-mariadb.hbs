@@ -1,0 +1,17 @@
+<h2>Installing MariaDB</h2>
+<pre>
+    <code class="hljs yaml">
+---
+- name:     Install MariaDB
+  apt:      name=mariadb-server
+
+- name:     Install Python MySQLdb (for Ansible)
+  apt:      name=python-mysqldb
+
+- name:     Create Database
+  mysql_db: name=\{{ app.db.database }}
+            state=present
+            login_user=\{{ app.db.username }}
+            login_password=\{{ app.db.password }}
+    </code>
+</pre>

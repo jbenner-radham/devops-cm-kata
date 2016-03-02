@@ -1,0 +1,19 @@
+<h2>App Configuration</h2>
+<pre>
+    <code class="hljs yaml">
+- name:       Copy Environment File
+  copy:       src=../src/.env.example
+              dest=/vagrant/src/.env
+              force=no
+
+- name:       Change DB Username
+  lineinfile: dest=/vagrant/src/.env
+              regexp='DB_USERNAME=homestead'
+              line='DB_USERNAME={{ app.db.username }}'
+
+- name:       Change DB Password
+  lineinfile: dest=/vagrant/src/.env
+              regexp='DB_PASSWORD=secret'
+              line='DB_PASSWORD={{ app.db.password }}'
+    </code>
+</pre>

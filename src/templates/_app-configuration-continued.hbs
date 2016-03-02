@@ -1,0 +1,15 @@
+<h2>App Configuration (continued)</h2>
+<pre>
+    <code class="hljs yaml">
+- name:       Run Composer Install
+  shell:      (cd /vagrant/src && composer install)
+
+- name:       Generate App Key
+  shell:      (cd /vagrant/src && php artisan key:generate)
+
+- name:       Run DB Migrations And Seeds
+  shell:      >
+              (cd /vagrant/src &&
+                  php artisan migrate:refresh --seed)
+    </code>
+</pre>

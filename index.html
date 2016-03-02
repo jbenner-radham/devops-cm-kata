@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="author" content="James Benner">
-<meta property="dcterms:modified" content="2016-03-02T00:26:13Z">
+<meta property="dcterms:modified" content="2016-03-02T19:47:56Z">
 <title>James Benner: DevOps CM Kata Presentation</title>
 <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
 <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
@@ -183,9 +183,27 @@
         </code>
     
 </pre></section>
+<section>
+<h2>Configuring PHP</h2>
+<pre>
+        <code class="hljs yaml">
+    - name:  Enable PHP Modules
+      shell: php5enmod {{ item }}
+      with_items:
+        - curl
+        - intl
+        - json
+        - opcache
+        - mysql
+        - mysqli
+        - pdo
+        - pdo_mysql
+    </code>
+</pre></section>
 </div>
 <!-- .slides --></div>
 <!-- .reveal -->
+<code class="hljs yaml">
 <script src="bower_components/reveal.js/js/reveal.js">
 </script> 
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js">
@@ -193,6 +211,6 @@
 <script>
             Reveal.initialize();
             hljs.initHighlightingOnLoad();
-</script>
+</script></code>
 </body>
 </html>

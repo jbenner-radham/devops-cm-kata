@@ -1,0 +1,15 @@
+<h2>Configuring PHP</h2>
+<pre>
+    <code class="hljs yaml">
+- name:  Enable PHP Modules
+  shell: php5enmod \{{ item }}
+  with_items:
+    - curl
+    - intl
+    - json
+    - opcache
+    - mysql
+    - mysqli
+    - pdo
+    - pdo_mysql
+</pre>

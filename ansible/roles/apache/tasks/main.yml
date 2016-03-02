@@ -4,15 +4,14 @@
 
 - name:           Install Apache Modules
   apache2_module: state=present name={{ item }}
-  notify:         restart apache
   with_items:
     - rewrite
     - headers
     - expires
 
 - name:           Change Default Apache Site
-  template:       src=vhost.conf.tpl dest=/etc/apache2/sites-available/000-default.conf
-  notify:         Restart Apache
+  template:       src=vhost.conf.tpl
+                  dest=/etc/apache2/sites-available/000-default.conf
 
 - name:           Change Apache Run User
   lineinfile:     dest=/etc/apache2/envvars
@@ -23,3 +22,4 @@
   lineinfile:     dest=/etc/apache2/envvars
                   regexp='export APACHE_RUN_GROUP=www-data'
                   line='export APACHE_RUN_GROUP=vagrant'
+  notify:         Restart Apache

@@ -20,4 +20,6 @@
   shell:      (cd /vagrant/src && php artisan key:generate)
 
 - name:       Run DB Migrations And Seeds
-  shell:      (cd /vagrant/src && php artisan migrate:refresh --seed)
+  shell:      >
+              (cd /vagrant/src &&
+                  php artisan migrate:refresh --seed)

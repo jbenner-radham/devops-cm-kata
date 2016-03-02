@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="author" content="James Benner">
-<meta property="dcterms:modified" content="2016-03-02T20:58:25Z">
+<meta property="dcterms:modified" content="2016-03-02T22:00:08Z">
 <title>James Benner: DevOps CM Kata Presentation</title>
 <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
 <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
@@ -104,7 +104,6 @@
     
     - name:           Install Apache Modules
       apache2_module: state=present name={{ item }}
-      notify:         restart apache
       with_items:
         - rewrite
         - headers
@@ -212,8 +211,10 @@
     - name:  Install Composer
       shell: &gt;
              curl -sS https://getcomposer.org/installer |
-             php -- --install-dir=/usr/local/bin --filename=composer
-             creates=/usr/local/bin/composer warn=no
+                 php -- --install-dir=/usr/local/bin
+                        --filename=composer
+             creates=/usr/local/bin/composer
+             warn=no
     
     - name:  Install Prestissimo (to speed up Composer installs)
       shell: composer global require hirak/prestissimo

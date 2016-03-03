@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="author" content="James Benner">
-<meta property="dcterms:modified" content="2016-03-02T22:00:08Z">
+<meta property="dcterms:modified" content="2016-03-02T22:51:23Z">
 <title>James Benner: DevOps CM Kata Presentation</title>
 <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
 <link rel="stylesheet" href="bower_components/reveal.js/css/theme/black.css">
@@ -209,9 +209,8 @@
 <pre>
         <code class="hljs yaml">
     - name:  Install Composer
-      shell: &gt;
-             curl -sS https://getcomposer.org/installer |
-                 php -- --install-dir=/usr/local/bin
+      shell: curl -sS https://getcomposer.org/installer |
+                 php -- --install-dir=/usr/local/bin \
                         --filename=composer
              creates=/usr/local/bin/composer
              warn=no
@@ -233,12 +232,12 @@
     - name:       Change DB Username
       lineinfile: dest=/vagrant/src/.env
                   regexp='DB_USERNAME=homestead'
-                  line='DB_USERNAME='
+                  line='DB_USERNAME={{ app.db.username }}'
     
     - name:       Change DB Password
       lineinfile: dest=/vagrant/src/.env
                   regexp='DB_PASSWORD=secret'
-                  line='DB_PASSWORD='
+                  line='DB_PASSWORD={{ app.db.password }}'
         </code>
     
 </pre></section>
@@ -253,8 +252,7 @@
       shell:      (cd /vagrant/src &amp;&amp; php artisan key:generate)
     
     - name:       Run DB Migrations And Seeds
-      shell:      &gt;
-                  (cd /vagrant/src &amp;&amp;
+      shell:      (cd /vagrant/src &amp;&amp;
                       php artisan migrate:refresh --seed)
         </code>
     
